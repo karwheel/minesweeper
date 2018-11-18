@@ -458,6 +458,7 @@ function endGame(result,active,timerVar,highScore,seconds) {
 function revealBlank(tile) {
   $(tile).text('-');
   $(tile).data('opened', true);
+  $(tile).css('color', '#666666');
 }
 
 function recursiveCheck(tile,board) {
