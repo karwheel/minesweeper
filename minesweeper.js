@@ -190,7 +190,12 @@ $(document).ready(function(){
             if (hasABomb == true) {
               $(tile).text('B');
             } else if (curval == '?') {
+              if (num != 0) {
               $(tile).text(num);
+            } else {
+              $(tile).text('-');
+              $(tile).css('color', '#666666');
+            }
             }
           }
 
