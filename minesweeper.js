@@ -6,13 +6,17 @@ $(document).ready(function(){
   let timerVar;
   let seconds;
   let highScore = 0;
+  let start;
   $('div.highscore').append(highScore);
 
   $('button.setBoard').click(function() {
     active = true;
+    start = true;
     seconds = 0;
+    $('div.timer').empty();
+    $('div.timer').append(seconds);
     stoptimer(timerVar);
-    timerVar = setInterval(timer, 1000);
+    // timerVar = setInterval(timer, 1000);
 
 
     let w = document.getElementById('width').value;
@@ -154,6 +158,10 @@ $(document).ready(function(){
   });
 
   $('div.board').on('click', '#tile', function(e) {
+    if (start == true) {
+      start = false;
+      timerVar = setInterval(timer, 1000);
+    }
     if (active == true) {
       let row = $(this).data('row');
       let column = $(this).data('column');
