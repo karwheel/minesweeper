@@ -176,11 +176,25 @@ $(document).ready(function(){
           active = false;
         }
       }
+
+
       let spaces = 0;
       for (let r = 0; r < h; r++) {
         for (let c = 0; c < w; c++) {
           let tile = board[r][c];
           let hasABomb = $(tile).data('hasbomb');
+          let num = $(tile).data('bombcount');
+          let curval = $(tile).text();
+          //alert("r: "+r+" c: "+c+" hasabomb: "+hasABomb+" active: "+active);
+          if (active == false) {
+            if (hasABomb == true) {
+              $(tile).text('B');
+            } else if (curval == '?') {
+              $(tile).text(num);
+            }
+          }
+
+
           let isOpened = $(tile).data('opened');
           if (hasABomb == false && isOpened == true) {
             spaces++;
@@ -447,7 +461,7 @@ function endGame(result,active,timerVar,highScore,seconds) {
     }
 
   } else {
-    alert("you lost :(");
+    //alert("you lost :(");
     stoptimer(timerVar);
 
   }
