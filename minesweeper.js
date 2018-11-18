@@ -300,6 +300,9 @@ function revealSquare(tile,board,spacesLeft,timerVar) {
     endGame(0,0,timerVar);
     return false;
   } else if (opened == true && bombcount != 0){
+
+
+
     let neighbors = [];
     if (r == 0 && c == 0) {
       let right = board[r][c+1];
@@ -400,18 +403,20 @@ function revealSquare(tile,board,spacesLeft,timerVar) {
     }
     let text = $(tile).text();
 
+    //same number of flags as tile says there are bombs
     if (text == flags) {
       for (let k = 0; k < neighbors.length; k++) {
         let nextdoor = $(neighbors[k]);
-        let rtwo = $(nextdoor).data('row');
-        let ctwo = $(nextdoor).data('column');
 
         let temp = $(nextdoor).data('bombcount');
         let opened = $(nextdoor).data('opened');
         let containsbomb = $(nextdoor).text();
         let isabomb = $(nextdoor).data('hasbomb');
         if (isabomb == true && containsbomb != 'F') {
+          alert("timerVar: "+timerVar);
           endGame(0,timerVar);
+          stoptimer(timerVar);
+          alert('you clicked a bomb, you lost');
           return false;
         } else if (temp != 0 && opened == false && containsbomb != 'F') {
           revealData(nextdoor,temp);
@@ -421,7 +426,11 @@ function revealSquare(tile,board,spacesLeft,timerVar) {
         }
       }
     }
-  } else {
+  }
+
+
+
+  else {
 
 
 
