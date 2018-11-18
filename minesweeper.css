@@ -1,0 +1,97 @@
+button.square {
+    background-color: #7c7c7b;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+div.set-board-container {
+  text-align: center;
+}
+
+button.setBoard {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+button.square[data-hasbomb="true"] {
+  color: red;
+}
+
+div.height{
+  position: absolute;
+   right: 100px;
+   width: 25%;
+   border: 3px solid #73AD21;
+   text-align: center;
+   /* padding: 10px; */
+
+}
+
+div.width{
+  position: absolute;
+   left: 100px;
+   width: 25%;
+   border: 3px solid #73AD21;
+   text-align: center;
+   /* padding: 10px; */
+}
+
+div.numbombs{
+  margin: auto;
+   width: 25%;
+   border: 3px solid green;
+   text-align: center;
+   /* padding: 10px; */
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+div.board-container {
+  text-align: center;
+}
+
+div.timer-container {
+  position: absolute;
+   left: 100px;
+   width: 25%;
+   border: 3px solid #73AD21;
+   text-align: center;
+   margin-top: 30px;
+}
+
+div.high-score-container {
+  margin: auto;
+   width: 25%;
+   border: 3px solid green;
+   text-align: center;
+   margin-top: 30px;
+}
+
+div.number-bombs-container {
+  position: absolute;
+   right: 100px;
+   width: 25%;
+   border: 3px solid #73AD21;
+   text-align: center;
+   margin-top: 30px;
+}
