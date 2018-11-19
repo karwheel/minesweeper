@@ -27,10 +27,6 @@ button.setBoard {
     margin-bottom: 25px;
 }
 
-button.square[data-hasbomb="true"] {
-  color: red;
-}
-
 div.height{
   position: absolute;
    right: 100px;
@@ -94,4 +90,9 @@ div.number-bombs-container {
    border: 3px solid #73AD21;
    text-align: center;
    margin-top: 30px;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+
 }
