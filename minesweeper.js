@@ -413,7 +413,7 @@ function revealSquare(tile,board,spacesLeft,timerVar) {
         let containsbomb = $(nextdoor).text();
         let isabomb = $(nextdoor).data('hasbomb');
         if (isabomb == true && containsbomb != 'F') {
-          alert("timerVar: "+timerVar);
+          //alert("timerVar: "+timerVar);
           endGame(0,timerVar);
           stoptimer(timerVar);
           alert('you clicked a bomb, you lost');
